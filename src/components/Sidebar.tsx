@@ -24,6 +24,7 @@ export default function Sidebar({ activeSection, onSectionChange }: SidebarProps
     { id: 'history', label: 'История', icon: 'History' },
     { id: 'saved', label: 'Сохраненное', icon: 'Bookmark' },
     { id: 'liked', label: 'Понравилось', icon: 'ThumbsUp' },
+    { id: 'settings', label: 'Настройки', icon: 'Settings' },
   ];
 
   const subscriptions = [

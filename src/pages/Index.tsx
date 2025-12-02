@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import VideoGrid from '@/components/VideoGrid';
+import ChannelSettings from '@/components/ChannelSettings';
 
 export default function Index() {
   const [activeSection, setActiveSection] = useState('home');
@@ -14,7 +15,11 @@ export default function Index() {
         <Header />
         
         <main className="pt-20 px-6 pb-8">
-          <VideoGrid section={activeSection} />
+          {activeSection === 'settings' ? (
+            <ChannelSettings />
+          ) : (
+            <VideoGrid section={activeSection} />
+          )}
         </main>
       </div>
     </div>
