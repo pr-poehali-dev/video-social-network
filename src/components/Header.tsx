@@ -13,7 +13,11 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Badge } from '@/components/ui/badge';
 
-export default function Header() {
+interface HeaderProps {
+  onUploadClick?: () => void;
+}
+
+export default function Header({ onUploadClick }: HeaderProps) {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
@@ -40,6 +44,15 @@ export default function Header() {
         </div>
 
         <div className="flex items-center gap-2">
+          <Button
+            variant="default"
+            className="gap-2"
+            onClick={onUploadClick}
+          >
+            <Icon name="Video" size={18} />
+            <span className="hidden sm:inline">Загрузить</span>
+          </Button>
+
           <Button variant="ghost" size="icon" className="relative">
             <Icon name="Bell" size={20} />
             <Badge className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 bg-primary text-primary-foreground border-0">
